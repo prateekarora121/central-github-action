@@ -6,6 +6,7 @@ defaults:
     shell: bash -leo pipefail {0}
 jobs:
   PR:
+    runs-on : windows-latest
     steps:
       - name: checking call
         run: echo "Test Pass" 
