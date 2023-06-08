@@ -12,6 +12,7 @@ jobs:
         run: echo "Test Pass" 
       - name: clone repository
         uses: actions/checkout@v2
+      - name: list files
         run: ls -a
       - name: Installing PNPM
         uses: pnpm/action-setup@v2.2.2
