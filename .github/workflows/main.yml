@@ -12,6 +12,7 @@ jobs:
         run: echo "Test Pass" 
       - name: clone repository
         uses: actions/checkout@v2
+        run: ls -a
       - name: Installing PNPM
         uses: pnpm/action-setup@v2.2.2
         id: pnpm-install
@@ -25,4 +26,4 @@ jobs:
       - name: Build the project
         run: |
           ls -a
-          npm run build
+    
