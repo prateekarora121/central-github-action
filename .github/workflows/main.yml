@@ -1,1 +1,11 @@
+name: PR
+on: workflow_call
 
+defaults:
+  run:
+    shell: bash -leo pipefail {0}
+jobs:
+  PR:
+    steps:
+      - name: checking call
+        run: echo "Test Pass" 
