@@ -25,7 +25,6 @@ jobs:
       - name: Build the project
         run: |
           cd website
-          ls
           npm run build
           
     
