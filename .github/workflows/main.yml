@@ -24,5 +24,7 @@ jobs:
           node-version: 16.16.0
       - name: Build the project
         run: |
-          ls 
+          cd website
+          ls
+          npm run build
     
