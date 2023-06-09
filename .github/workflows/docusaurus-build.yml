@@ -19,7 +19,9 @@ jobs:
           version: 7.8.0
           run_install: false
       - name: Installing dependencies
-        run: pnpm i
+        run: |
+         ls
+         pnpm i
       - name: Build the project
         run: |
           cd website
