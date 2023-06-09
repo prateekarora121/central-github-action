@@ -20,7 +20,7 @@ jobs:
           run_install: false
       - name: Installing dependencies
         run: |
-         ls
+         cd website
          pnpm i
       - name: Build the project
         run: |
