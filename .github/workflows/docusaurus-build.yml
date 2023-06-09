@@ -12,17 +12,14 @@ jobs:
         run: echo "Test Pass" 
       - name: clone repository
         uses: actions/checkout@v2
-      - name: Installing PNPM
-        uses: pnpm/action-setup@v2.2.4
-        id: pnpm-install
+      - name: Installing node
+        uses: actions/setup-node@v2
         with:
-          version: 7.8.0
-          run_install: false
+          node-version: 16.16.0
       - name: Installing dependencies
         run: |
-         cd website
-         npm install -g npm
-         pnpm i
+         npm install -g pnpm
+         pnpm install
       - name: Build the project
         run: |
           cd website
