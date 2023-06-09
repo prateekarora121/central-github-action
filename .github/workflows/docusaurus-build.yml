@@ -1,0 +1,24 @@
+name: PR
+on: workflow_call
+
+defaults:
+  run:
+    shell: bash -leo pipefail {0}
+jobs:
+  PR:
+    runs-on : windows-latest
+    steps:
+      - name: checking call
+        run: echo "Test Pass" 
+      - name: clone repository
+        uses: actions/checkout@v2
+      - name: Installing PNPM
+        uses: pnpm/action-setup@v2.2.2
+        id: pnpm-install
+        with:
+          version: 7.8.0
+          run_install: false
+      - name: Build the project
+        run: |
+          cd website
+          npm run build
