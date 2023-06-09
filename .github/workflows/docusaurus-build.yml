@@ -21,6 +21,7 @@ jobs:
       - name: Installing dependencies
         run: |
          cd website
+         npm install -g npm
          pnpm i
       - name: Build the project
         run: |
