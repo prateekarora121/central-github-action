@@ -18,6 +18,8 @@ jobs:
         with:
           version: 7.8.0
           run_install: false
+      - name: Installing dependencies
+        run: npm i
       - name: Build the project
         run: |
           cd website
