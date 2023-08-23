@@ -7,7 +7,7 @@ defaults:
     shell: bash -leo pipefail {0}
 jobs:
   PR:
-    runs-on : windows-latest
+    runs-on : ubuntu-latest
     steps:
       - name: Get Commit URLs
         run: |
