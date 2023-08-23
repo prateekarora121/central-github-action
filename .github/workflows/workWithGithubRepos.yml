@@ -10,4 +10,5 @@ jobs:
     steps:
       - name: Get Commit URLs
         run: |
-          echo $(curl -G -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" https://github.com/prateekarora121/medicheck/actions/runs -d "status=success" )  
+          LastPassTime=$(curl -G -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" https://github.com/prateekarora121/medicheck/actions/runs -d "status=success")  
+          echo $LastPassTime
