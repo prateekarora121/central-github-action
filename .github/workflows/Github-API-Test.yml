@@ -11,5 +11,8 @@ jobs:
     steps:
       - name: Get Commit URLs
         run: |
+          sudo apt update
+          sudo apt install -y jq
+          jq --version
           time1=$(curl -G -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" https://api.github.com/repos/prateekarora121/central-github-action/actions/workflows/workWithGithubRepos.yml/runs -d "status=success" | jq -r ".workflow_runs[] | sort | tail -n 1")
           echo $time1
