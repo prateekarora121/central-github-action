@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Get Commit URLs
         run: |
-          time=$(curl -G -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" https://api.github.com/repos/prateekarora121/central-github-action/actions/workflows/workWithGithubRepos.yml/runs -d "status=success" | jq ".workflow_runs[].created_at | sort | tail -n 1")
+          time="test"
           echo $time
