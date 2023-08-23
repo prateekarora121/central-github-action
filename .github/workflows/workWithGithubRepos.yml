@@ -1,4 +1,4 @@
-name: PR
+name: Github API Test
 on: workflow_call
 
 defaults:
