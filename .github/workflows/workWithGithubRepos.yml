@@ -1,5 +1,5 @@
 name: Github API Test
-on: workflow_call
+on: workflow_dispatch
 
 defaults:
   run:
