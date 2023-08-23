@@ -6,9 +6,8 @@ defaults:
     shell: bash -leo pipefail {0}
 jobs:
   PR:
-    runs-on : ubuntu-latest
+    runs-on : windows-latest
     steps:
       - name: Get Commit URLs
         run: |
-          LastPassTime=$(curl -G -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" https://github.com/prateekarora121/medicheck/actions/runs -d "status=success" )  
-          echo LastPassTime
+          echo $(curl -G -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" https://github.com/prateekarora121/medicheck/actions/runs -d "status=success" | jq -r ".workflow_runs[].created_at | sort | tail -n 1")  
