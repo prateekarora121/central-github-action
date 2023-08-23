@@ -1,0 +1,27 @@
+name: Docusaurus PR
+on: workflow_call
+
+defaults:
+  run:
+    shell: bash -leo pipefail {0}
+jobs:
+  PR:
+    runs-on : windows-latest
+    steps:
+      - name: checking call
+        run: echo "Test Pass" 
+      - name: clone repository
+        uses: actions/checkout@v2
+      - name: Installing node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.16.0
+      - name: Installing dependencies
+        run: |
+         npm install -g pnpm
+         cd website
+         pnpm install
+      - name: Build the project
+        run: |
+          cd website
+          npm run build
